@@ -39,51 +39,59 @@ Implementing fault tolerance and retry mechanisms
 
 ⚙️ Setup Instructions
 
-Clone the Repository
-
+1. Clone the Repository
 git clone https://github.com/<your-username>/<repo-name>.git
 cd <repo-name>
+2. Set Up Azure Data Lake Storage
 
-Set up Azure Data Lake Storage
+Create a storage account and containers: Bronze, Silver, Gold
 
-Create a storage account and containers for Bronze, Silver, and Gold layers
+Use access keys or service principal, store them securely (avoid hardcoding)
 
-Configure access keys or service principal securely (avoid hardcoding secrets)
+3. Configure Azure Data Factory
 
-Configure Azure Data Factory (ADF)
+Connect to the API using the REST connector
 
-Connect to your API using the REST connector
+Enable pagination, retries, and incremental ingestion
 
-Set up pagination, error handling, and incremental ingestion
+4. Set Up Databricks
 
-Set up Databricks
+Mount Azure Data Lake storage
 
-Mount Azure Data Lake storage to Databricks
-
-Use notebooks for JSON flattening and incremental processing
+Use notebooks for flattening JSON and incremental ETL
 
 Store secrets securely using Databricks Secret Scopes
 
-Run the Pipeline
+5. Run the Pipeline
 
-Trigger the ADF pipeline → fetch API data → write to ADLS Bronze
+Trigger the ADF pipeline → fetch API data → write to Bronze
 
 Transform and flatten data in Databricks → write to Silver/Gold
 
-⚡ Notes
+⚡ Best Practices
 
-Do not store secrets in notebooks or commits – use Databricks Secret Scopes or Azure Key Vault
+Never commit secrets to GitHub; always use secure storage
 
-Monitor pipeline logs for failed requests and retry automatically
+Incremental ingestion improves performance and reduces costs
 
-Incremental ingestion ensures efficient storage and compute usage
+Monitor pipeline logs to handle failed API requests efficiently
+
+💼 Skills Demonstrated
+
+Real-world API ingestion pipelines
+
+Integration of REST APIs with cloud storage
+
+Fault tolerance and retry mechanisms
+
+JSON flattening and incremental ETL
 
 📚 References
 
 Azure Data Factory REST Connector
 
-Databricks Notebooks
-
 Azure Data Lake Storage Gen2
 
-Working with nested JSON data and incremental ETL
+Databricks Notebook Best Practices
+
+I can also make a version with a screenshot of your pipeline diagram and sample notebook outputs so it
