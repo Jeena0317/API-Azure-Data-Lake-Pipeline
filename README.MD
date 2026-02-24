@@ -94,4 +94,3 @@ Azure Data Lake Storage Gen2
 
 Databricks Notebook Best Practices
 
-I can also make a version with a screenshot of your pipeline diagram and sample notebook outputs so it
