@@ -1,7 +1,5 @@
 API → Azure Data Lake Pipeline
 
-Level: Intermediate
-
 🧩 Use Case
 
 This project demonstrates how to ingest live data from a public API (such as weather, currency, COVID-19, or cryptocurrency data) into Azure Data Lake using a robust ETL pipeline. The pipeline ensures fault-tolerant, incremental ingestion with proper handling of complex JSON data.
